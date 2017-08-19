@@ -1,42 +1,35 @@
 package PaizaChallenge.C040;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.StreamTokenizer;
 import java.util.Scanner;
 
 /**
  * Created by Administrator on 2017/8/19 0019.
  */
+/*
+* @anchor https://paiza.jp/challenges/181/page/problem
+ */
 public class Main {
-//    private static StreamTokenizer streamTokenizer = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
-//    private static int getInt() throws IOException {
-//        streamTokenizer.nextToken();
-//        return (int) streamTokenizer.nval;
-//    }
     static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         final int N = Integer.parseInt(scanner.nextLine());
-        double ceil = Double.MAX_EXPONENT,floor = Double.MIN_EXPONENT;
+        double ceil = Double.MAX_EXPONENT, floor = Double.MIN_EXPONENT;
         String[] ipts;
         Double temp;
-        for(int i =1;i<=N;i++){
+        for (int i = 1; i <= N; i++) {
             ipts = scanner.nextLine().split(" ");
             temp = Double.valueOf(ipts[1]);
-            if(ipts[0].equals("le")){
-               if(temp<ceil){
-                   ceil = temp;
-               }
-            }else{
-                if(temp>floor){
+            if (ipts[0].equals("le")) {
+                if (temp < ceil) {
+                    ceil = temp;
+                }
+            } else {
+                if (temp > floor) {
                     floor = temp;
                 }
             }
         }
-        System.out.println(floor+" "+ceil);
-
-
+        System.out.println(floor + " " + ceil);
     }
 }
 /*
